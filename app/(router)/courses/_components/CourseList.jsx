@@ -23,7 +23,7 @@ const CourseList = () => {
             setCourseList(res?.courseLists);
         })
     }
-    console.log(courseList);
+    // console.log(courseList);
     return (
         <div className='p-5 bg-white rounded-lg mt-5'>
             {/* Title and filter */}
@@ -42,12 +42,29 @@ const CourseList = () => {
             </div>
 
             {/* Display course list */}
-            <div className='grid grid-cols-2 gap-3 md:grid-cols-3'>
+            <div className='grid mt-4 grid-cols-2 gap-3 md:grid-cols-3'>
                 {
-                    courseList.map((item, index) => (
-                        // console.log(item);
-                        <CourseItem key={index} course={item} />
-                    ))
+                    courseList?.length > 0 ?
+                        courseList.map((item, index) => (
+                            // console.log(item);
+                            <CourseItem key={index} course={item} />
+                        )) :
+                        Array(10).fill(null).map((item, index) => (
+                            <div className='flex flex-col space-y-3'>
+                                <div key={index} className='animate-pulse rounded-md bg-slate-200 w-full h-[200px]'>
+
+                                </div>
+                                <div className='space-y-1'>
+
+                                    <div key={index} className='animate-pulse rounded bg-slate-200 w-full h-[15px]'>
+
+                                    </div>
+                                    <div key={index} className='animate-pulse rounded bg-slate-200 w-full h-[15px]'>
+
+                                    </div>
+                                </div>
+                            </div>
+                        ))
                 }
             </div>
         </div>

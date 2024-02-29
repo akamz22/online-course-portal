@@ -7,7 +7,7 @@ const MASTER_URL = `https://api-ap-south-1.hygraph.com/v2/${API_KEY}/master`
 const getAllCourseList = async () => {
     const query = gql`
     query Assets {
-        courseLists {
+        courseLists(orderBy: createdAt_DESC) {
           author
           id
           name
@@ -30,11 +30,28 @@ const getAllCourseList = async () => {
             url
           }
         }
-      }
+      }      
     `
-
     const result = await request(MASTER_URL, query);
     return result;
 }
 
-export default { getAllCourseList };
+const getSideBanner = async () =>{
+    const query = gql`
+    query GetSideBanner {
+        sideBanners {
+          banner {
+            id
+            url
+          }
+          id
+          name
+          url
+        }
+      }
+    `
+    const result = await request(MASTER_URL, query);
+    return result;
+}
+
+export default { getAllCourseList , getSideBanner };
