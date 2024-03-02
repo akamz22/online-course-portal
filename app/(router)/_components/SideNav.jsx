@@ -38,9 +38,9 @@ const SideNav = () => {
         },
     ]
     const path = usePathname();
-    useEffect(() =>{
-        console.log(path);
-    },[])
+    // useEffect(() =>{
+    //     console.log(path);
+    // },[])
     return (
         <div className='p-5 bg-white shadow-sm border h-screen'>
             {/* <Image className='cursor-pointer'  src="/logo.png" alt='No-found' width={170} height={80} /> */}
@@ -48,7 +48,7 @@ const SideNav = () => {
             <hr className='mt-7'></hr>
             <div className='mt-8 '>
                 {menu.map((item, index) => (
-                    <Link href={item.path}>
+                    <Link href={item.path} key={index}>
                         <div key={index} className={`group flex gap-3  p-3 text-[20px] items-center mt-2 text-gray-500 hover:bg-primary hover:text-white cursor-pointer rounded-md transition-all ease-in-out duration-300
                         ${path.includes(item.path) && 'bg-primary text-white'}`}>
                             <item.icon  className='group-hover:animate-bounce' />

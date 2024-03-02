@@ -1,5 +1,6 @@
 'use client'
 import GlobalApi from '@/app/_utils/GlobalApi'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import {
     Select,
@@ -43,28 +44,30 @@ const CourseList = () => {
 
             {/* Display course list */}
             <div className='grid mt-4 grid-cols-2 gap-3 md:grid-cols-3'>
-                {
-                    courseList?.length > 0 ?
-                        courseList.map((item, index) => (
-                            // console.log(item);
-                            <CourseItem key={index} course={item} />
-                        )) :
-                        Array(10).fill(null).map((item, index) => (
-                            <div className='flex flex-col space-y-3'>
-                                <div key={index} className='animate-pulse rounded-md bg-slate-200 w-full h-[200px]'>
+                {courseList?.length > 0 ? courseList.map((item, index) => (
+                    <Link href={`/course-preview/${item?.slug}`}>
+                        <div key={index}>
+                            <CourseItem course={item} />
+                        </div>
+                    </Link>
+                ))
+                    :
+                    Array(10).fill(null).map((item, index) => (
+                        <div className='flex flex-col space-y-3'>
+                            <div key={index} className='animate-pulse rounded-md bg-slate-200 w-full h-[200px]'>
+
+                            </div>
+                            <div className='space-y-1'>
+
+                                <div key={index} className='animate-pulse rounded bg-slate-200 w-full h-[15px]'>
 
                                 </div>
-                                <div className='space-y-1'>
+                                <div key={index} className='animate-pulse rounded bg-slate-200 w-full h-[15px]'>
 
-                                    <div key={index} className='animate-pulse rounded bg-slate-200 w-full h-[15px]'>
-
-                                    </div>
-                                    <div key={index} className='animate-pulse rounded bg-slate-200 w-full h-[15px]'>
-
-                                    </div>
                                 </div>
                             </div>
-                        ))
+                        </div>
+                    ))
                 }
             </div>
         </div>

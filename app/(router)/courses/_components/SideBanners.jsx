@@ -6,7 +6,7 @@ const SideBanners = () => {
   const [sideBannerList, setSideBannerList] = useState([])
   const getSideBanners = () => {
     GlobalApi.getSideBanner().then(res => {
-      console.log(res);
+      // console.log(res);
       setSideBannerList(res.sideBanners)
     })
   }
@@ -14,10 +14,12 @@ const SideBanners = () => {
     getSideBanners();
   }, [])
   return (
-    <div className=''>
+    <div className='space-y-2 rounded-md'>
       {sideBannerList.map((item, index) => (
         <div key={index}>
-          <Image className='rounded-md' alt="Banner" src={item.banner.url} height={800} width={400} />
+          <Image
+            onClick={() => window.open(item?.url)}
+            className='rounded-lg p-4 bg-white cursor-pointer' alt="Banner" src={item.banner.url} height={800} width={400} />
         </div>
       ))}
     </div>

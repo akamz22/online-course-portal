@@ -10,7 +10,7 @@ const Courses = () => {
         <WelcomeBanner />
         <CourseList />
       </div>
-      <div className='p-5 bg-white border rounded-xl'>
+      <div className='m-4 border rounded-xl'>
         <SideBanners />
       </div>
     </div>
