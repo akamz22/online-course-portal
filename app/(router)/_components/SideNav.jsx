@@ -4,37 +4,51 @@ import Link from 'next/link'
 import React, { useEffect } from 'react'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import { useUser } from '@clerk/nextjs'
 const SideNav = () => {
+    const { user } = useUser();
     const menu = [
+        {
+            id: 5,
+            name: 'Dashboard',
+            icon: GraduationCap,
+            path: '/dashboard',
+            auth: user
+        },
         {
             id: 1,
             name: 'All Courses',
             icon: BookOpen,
-            path: '/courses'
+            path: '/courses',
+            auth: true
         },
         {
             id: 2,
             name: 'Membership',
             icon: BadgeIcon,
-            path: '/membership'
+            path: '/membership',
+            auth: true
         },
         {
             id: 3,
             name: 'Store',
             icon: LayoutGrid,
-            path: '/store'
+            path: '/store',
+            auth: true
         },
         {
             id: 4,
             name: 'Be Instructor',
             icon: GraduationCap,
-            path: '/instructor'
+            path: '/instructor',
+            auth: true
         },
         {
-            id: 5,
+            id: 6,
             name: 'Newsletter',
             icon: GraduationCap,
-            path: '/newsletter'
+            path: '/newsletter',
+            auth: true
         },
     ]
     const path = usePathname();
@@ -47,11 +61,11 @@ const SideNav = () => {
             <div className='w-[170px] h-[80px] text-[30px] font-bold text-primary'>Coursery</div>
             <hr className='mt-7'></hr>
             <div className='mt-8 '>
-                {menu.map((item, index) => (
+                {menu.map((item, index) => item.auth &&  (
                     <Link href={item.path} key={index}>
                         <div key={index} className={`group flex gap-3  p-3 text-[20px] items-center mt-2 text-gray-500 hover:bg-primary hover:text-white cursor-pointer rounded-md transition-all ease-in-out duration-300
                         ${path.includes(item.path) && 'bg-primary text-white'}`}>
-                            <item.icon  className='group-hover:animate-bounce' />
+                            <item.icon className='group-hover:animate-bounce' />
                             <h2>{item.name}</h2>
                         </div>
                     </Link>
