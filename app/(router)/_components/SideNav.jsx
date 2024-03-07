@@ -63,7 +63,7 @@ const SideNav = () => {
             <div className='mt-8 '>
                 {menu.map((item, index) => item.auth &&  (
                     <Link href={item.path} key={index}>
-                        <div key={index} className={`group flex gap-3  p-3 text-[20px] items-center mt-2 text-gray-500 hover:bg-primary hover:text-white cursor-pointer rounded-md transition-all ease-in-out duration-300
+                        <div key={index*23} className={`group flex gap-3  p-3 text-[20px] items-center mt-2 text-gray-500 hover:bg-primary hover:text-white cursor-pointer rounded-md transition-all ease-in-out duration-300
                         ${path.includes(item.path) && 'bg-primary text-white'}`}>
                             <item.icon className='group-hover:animate-bounce' />
                             <h2>{item.name}</h2>

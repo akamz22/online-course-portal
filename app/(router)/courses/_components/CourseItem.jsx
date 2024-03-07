@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
-const CourseItem = (course) => {
+const CourseItem = ({course}) => {
     // console.log(course)
-    course = course.course;
+    // course = course.course;
     return (
         <div className='border rounded-xl
         hover:shadow-md hover:shadow-purple-200 cursor-pointer'>

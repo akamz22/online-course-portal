@@ -16,7 +16,7 @@ const SideBanners = () => {
   return (
     <div className='space-y-2 rounded-md'>
       {sideBannerList.map((item, index) => (
-        <div key={index}>
+        <div key={index*79}>
           <Image
             onClick={() => window.open(item?.url)}
             className='rounded-lg p-4 bg-white cursor-pointer' alt="Banner" src={item.banner.url} height={800} width={400} />

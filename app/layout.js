@@ -1,7 +1,8 @@
+// 'use client'
 import { Inter, Outfit } from "next/font/google";
 import { ClerkProvider } from '@clerk/nextjs'
-
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Outfit({ subsets: ["latin"] });
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>{children}</body>
+        <Toaster />
       </html>
     </ClerkProvider>
 
