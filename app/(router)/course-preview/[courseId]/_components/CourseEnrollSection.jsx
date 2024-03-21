@@ -12,9 +12,9 @@ const CourseEnrollSection = ({ isUserAlreadytEnrolled, courseInfo }) => {
     const { user } = useUser();
     const router = useRouter();
     //Enroll to the course
-    useEffect(() => {
-        console.log("isUserAlreadytEnrolled : ", isUserAlreadytEnrolled);
-    }, [isUserAlreadytEnrolled])
+    // useEffect(() => {
+    //     console.log("isUserAlreadytEnrolled : ", isUserAlreadytEnrolled);
+    // }, [isUserAlreadytEnrolled])
     const onEnrollCourse = () => {
         // console.log("Slug : ", courseInfo?.slug,"Email : ", user?.primaryEmailAddress?.emailAddress);
         GlobalApi.EnrollToCourse(courseInfo?.slug, user?.primaryEmailAddress?.emailAddress).then(res => {
@@ -26,7 +26,7 @@ const CourseEnrollSection = ({ isUserAlreadytEnrolled, courseInfo }) => {
                 })
                 // Redirect to watch course page
                 // console.log("Res Id Enroll",res.createUserEnrollCourse?.id);
-                router.push('/watch-course/' + res.createUserEnrollCourse?.id)
+                router.push('/watch-course/' + res?.createUserEnrollCourse?.id)
             }
         })
     }

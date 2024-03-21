@@ -51,7 +51,7 @@ const CoursePreview = ({ params }) => {
       {/* Course Content */}
       <div className=''>
         <CourseEnrollSection isUserAlreadytEnrolled={isUserAlreadytEnrolled} courseInfo={courseInfo} />
-        <CourseContent isUserAlreadytEnrolled={isUserAlreadytEnrolled} courseInfo={courseInfo} />
+        <CourseContent isUserAlreadytEnrolled={isUserAlreadytEnrolled} courseInfo={courseInfo} watchMode={false} />
       </div>
     </div>
   )

@@ -50,6 +50,13 @@ const SideNav = () => {
             path: '/newsletter',
             auth: true
         },
+        {
+            id: 7,
+            name: 'Coursery Pro',
+            icon: GraduationCap,
+            path: '/coursery-pro',
+            auth: true
+        },
     ]
     const path = usePathname();
     // useEffect(() =>{
