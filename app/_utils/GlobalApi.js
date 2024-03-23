@@ -233,6 +233,36 @@ const getUserAllEnrollCourseList = async (email) => {
 
 }
 
+
+const addNewMember = async(email , paymentId) =>{
+    const query = gql`mutation MyMutation {
+      createMembership(data: {active: true, email: "`+email+`", paymentId: "`+paymentId+`"}) {
+        id
+      }
+      publishManyMemberships(to: PUBLISHED) {
+        count
+      }
+    }
+    `
+    const result = await request(MASTER_URL, query);
+    return result;
+}
+
+
+const checkForMembership = async (email)=> {
+  const query = gql`query MyQuery {
+    memberships(where: {email: "`+email+`"}) {
+      email
+      id
+      paymentId
+      updatedAt
+    }
+  }
+  `
+  const result = await request(MASTER_URL, query);
+  return result;
+}
+
 export default {
   getAllCourseList,
   getUserAllEnrollCourseList,
@@ -241,7 +271,9 @@ export default {
   getSideBanner,
   getCourseById,
   EnrollToCourse,
-  checkUserEnrollToCourse
+  checkUserEnrollToCourse,
+  addNewMember,
+  checkForMembership
 };
 
 

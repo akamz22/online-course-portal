@@ -1,5 +1,5 @@
 'use client'
-import { BadgeIcon, BookOpen, GraduationCap, LayoutGrid } from 'lucide-react'
+import { BadgeIcon, BookOpen, GraduationCap,LayoutDashboard ,ShieldCheck } from 'lucide-react'
 import Link from 'next/link'
 import React, { useEffect } from 'react'
 import Image from 'next/image'
@@ -11,7 +11,7 @@ const SideNav = () => {
         {
             id: 5,
             name: 'Dashboard',
-            icon: GraduationCap,
+            icon: LayoutDashboard,
             path: '/dashboard',
             auth: user
         },
@@ -29,20 +29,20 @@ const SideNav = () => {
             path: '/membership',
             auth: true
         },
-        {
-            id: 3,
-            name: 'Store',
-            icon: LayoutGrid,
-            path: '/store',
-            auth: true
-        },
-        {
-            id: 4,
-            name: 'Be Instructor',
-            icon: GraduationCap,
-            path: '/instructor',
-            auth: true
-        },
+        // {
+        //     id: 3,
+        //     name: 'Store',
+        //     icon: LayoutGrid,
+        //     path: '/store',
+        //     auth: true
+        // },
+        // {
+        //     id: 4,
+        //     name: 'Be Instructor',
+        //     icon: GraduationCap,
+        //     path: '/instructor',
+        //     auth: true
+        // },
         {
             id: 6,
             name: 'Newsletter',
@@ -53,7 +53,7 @@ const SideNav = () => {
         {
             id: 7,
             name: 'Coursery Pro',
-            icon: GraduationCap,
+            icon: ShieldCheck,
             path: '/coursery-pro',
             auth: true
         },

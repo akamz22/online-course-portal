@@ -1,13 +1,16 @@
 'use client'
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { toast } from "sonner"
 import { useUser } from '@clerk/nextjs';
 import Link from 'next/link';
 import GlobalApi from '@/app/_utils/GlobalApi';
 import { useRouter } from 'next/navigation';
+import { UsermemberContext } from '@/app/_context/UserMemberContext';
 const CourseEnrollSection = ({ isUserAlreadytEnrolled, courseInfo }) => {
     // console.log("Free", courseInfo);
+    const {isMember , setIsMember} = useContext(UsermemberContext)
+
     const membership = false;
     const { user } = useUser();
     const router = useRouter();
@@ -34,7 +37,7 @@ const CourseEnrollSection = ({ isUserAlreadytEnrolled, courseInfo }) => {
         <div className='p-3 text-center rounded-sm bg-primary '>
             <h2 className='text-[22px] font-bold text-white'>Enroll to the Course</h2>
             {/* User has membership and already loggedin */}
-            {user && (membership || courseInfo?.free) && (!isUserAlreadytEnrolled) ?
+            {user && (isMember || courseInfo?.free) && (!isUserAlreadytEnrolled) ?
                 <div className='flex flex-col gap-3 mt-3'>
                     <h2 className='text-[15px] font-light text-white'>Enroll Now to Start Learning And Building the Projects</h2>
                     <Button className="bg-white text-primary hover:bg-white hover:text-primary"
@@ -51,7 +54,7 @@ const CourseEnrollSection = ({ isUserAlreadytEnrolled, courseInfo }) => {
                     : !isUserAlreadytEnrolled &&
                     <div className='flex flex-col gap-3 mt-3'>
                         <h2 className='text-[15px] font-light text-white'>Buy Monthly Membership and Get Access to All Courses</h2>
-                        <Button className="bg-white text-primary hover:bg-white hover:text-primary">Buy Membership Just $6.99</Button>
+                        <Button className="bg-white text-primary hover:bg-white hover:text-primary">Buy Membership Just $3.99</Button>
                     </div>
             }
             {/* user above section  does not have membership or not sign in */}

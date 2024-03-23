@@ -4,17 +4,23 @@ import { UserButton, useUser } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import GlobalApi from "./_utils/GlobalApi";
+
 export default function Home() {
   const router = useRouter();
-  const { user ,isLoaded} = useUser();
+  const { user, isLoaded } = useUser();
   useEffect(() => {
-    if(user){
+    if (user) {
       router.push('/dashboard')
-    }else{
+    } else {
       isLoaded && router.push('/courses')
     }
-  },[user]);
+  }, [user]);
+
+
+
   return (
+
     <UserButton />
   );
 }
