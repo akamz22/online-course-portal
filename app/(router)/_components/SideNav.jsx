@@ -26,7 +26,7 @@ const SideNav = () => {
             id: 2,
             name: 'Membership',
             icon: BadgeIcon,
-            path: '/membership',
+            path: '/coursery-pro',
             auth: true
         },
         // {
