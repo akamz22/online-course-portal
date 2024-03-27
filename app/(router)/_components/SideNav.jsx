@@ -9,13 +9,6 @@ const SideNav = () => {
     const { user } = useUser();
     const menu = [
         {
-            id: 5,
-            name: 'Dashboard',
-            icon: LayoutDashboard,
-            path: '/dashboard',
-            auth: user
-        },
-        {
             id: 1,
             name: 'All Courses',
             icon: BookOpen,
@@ -23,10 +16,17 @@ const SideNav = () => {
             auth: true
         },
         {
+            id: 5,
+            name: 'Dashboard',
+            icon: LayoutDashboard,
+            path: '/dashboard',
+            auth: user
+        },
+        {
             id: 2,
-            name: 'Membership',
+            name: 'Store',
             icon: BadgeIcon,
-            path: '/coursery-pro',
+            path: '/store',
             auth: true
         },
         // {

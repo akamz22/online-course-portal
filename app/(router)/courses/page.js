@@ -2,11 +2,13 @@ import React from 'react'
 import CourseList from './_components/CourseList'
 import SideBanners from './_components/SideBanners'
 import WelcomeBanner from './_components/WelcomeBanner'
+import FilterData from './_components/FilterData'
 const Courses = () => {
   return (
     <div className='grid p-5 grid-cols-1 md:grid-cols-4'>
       <div className='col-span-3'>
         {/* Banner */}
+        <FilterData/>
         <WelcomeBanner />
         <CourseList />
       </div>

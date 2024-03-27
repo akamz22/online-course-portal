@@ -28,7 +28,6 @@ const Dashboard = () => {
       </div>
       <div className='m-4 border rounded-xl'>
         {/* <SideBanners /> */}
-
       </div>
      
     </div>

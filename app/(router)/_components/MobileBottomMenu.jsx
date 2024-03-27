@@ -6,7 +6,6 @@ import { useUser } from '@clerk/nextjs'
 
 const MobileBottomMenu = () => {
     const { user } = useUser();
-
     const path = usePathname();
     const menu = [
         {
@@ -38,6 +37,7 @@ const MobileBottomMenu = () => {
             auth: true
         },
     ]
+    
     return (
         <div className="fixed bottom-0 md:hidden left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
             <div className="grid h-full max-w-lg grid-cols-4 mx-auto font-[4px] justify-items-center">
@@ -53,8 +53,6 @@ const MobileBottomMenu = () => {
                 ))}
             </div>
         </div>
-
-
     )
 }
 

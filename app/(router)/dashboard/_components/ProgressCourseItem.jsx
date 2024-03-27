@@ -17,7 +17,7 @@ const ProgressCourseItem = ({ course }) => {
         <div className='border rounded-xl
         hover:shadow-md hover:shadow-purple-200 cursor-pointer'>
             {/* {console.log(course)} */}
-            <Image className='md:h-[150px] rounded-t-xl' src={course?.courseList?.banner?.url} alt="Banner" height={150} width={500} />
+            <Image className='md:h-[150px] rounded-t-xl' src={course?.courseList?.banner?.url} alt="Banner" height={150} width={700} />
             <div className='flex flex-col gap-0 p-2'>
                 <h2 className='text-[20px] font-semibold'>
                     {course?.courseList.name}

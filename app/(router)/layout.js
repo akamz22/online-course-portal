@@ -26,14 +26,14 @@ const layout = ({ children }) => {
     })
   }
   return (
-    <div className=''>
+    <div className='mb-20 md:mb-10'>
       <div className='sm:w-64 md:block fixed  hidden bg-gray-400'>
         <SideNav />
       </div>
-      <div className='md:ml-64 ml-2'>
+      <div className='md:ml-64'>
         <Header />
         {children}
-        <MobileBottomMenu/>
+        <MobileBottomMenu className='mt-20'/>
       </div>
 
     </div>
