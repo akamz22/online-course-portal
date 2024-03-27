@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { BadgeIcon, BookOpen, GraduationCap, LayoutDashboard, ShieldCheck, Home } from 'lucide-react'
 import { usePathname } from 'next/navigation'
@@ -10,15 +11,15 @@ const MobileBottomMenu = () => {
     const menu = [
         {
             id: 1,
-            name: 'Home',
-            icon: Home,
+            name: 'Dashboard',
+            icon: LayoutDashboard,
             path: '/dashboard',
             auth: user
         },
         {
             id: 2,
-            name: 'All Courses',
-            icon: BookOpen,
+            name: 'Home',
+            icon: Home,
             path: '/courses',
             auth: true
         },
@@ -37,7 +38,7 @@ const MobileBottomMenu = () => {
             auth: true
         },
     ]
-    
+
     return (
         <div className="fixed bottom-0 md:hidden left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
             <div className="grid h-full max-w-lg grid-cols-4 mx-auto font-[4px] justify-items-center">
