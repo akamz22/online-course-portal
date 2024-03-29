@@ -17,7 +17,7 @@ const CourseryPro = () => {
         axios.post('/api/create-subscription', JSON.stringify({
             plan_id: planId
         })).then(res => {
-            console.log(res.data);
+            // console.log(res.data);
             setSubscriptionId(res.data.id);
             makePayment();
         })
@@ -32,7 +32,7 @@ const CourseryPro = () => {
             name: "Coursery",
             description: "Coursery Pro Membersship",
             handler: async (res) => {
-                console.log("Pay Done",res);
+                // console.log("Pay Done",res);
                 if (res) {
                     addNewMember(res.razorpay_payment_id)
                 }
@@ -50,7 +50,7 @@ const CourseryPro = () => {
 
     const addNewMember = (paymentId) => {
         GlobalApi.addNewMember(user.primaryEmailAddress.emailAddress, paymentId).then((res) => {
-            console.log(res);
+            // console.log(res);
             if (res) {
                 toast("Payment Successfull");
             }

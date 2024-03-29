@@ -9,13 +9,7 @@ const MobileBottomMenu = () => {
     const { user } = useUser();
     const path = usePathname();
     const menu = [
-        {
-            id: 1,
-            name: 'Dashboard',
-            icon: LayoutDashboard,
-            path: '/dashboard',
-            auth: user
-        },
+       
         {
             id: 2,
             name: 'Home',
@@ -37,6 +31,13 @@ const MobileBottomMenu = () => {
             path: '/coursery-pro',
             auth: true
         },
+        {
+            id: 1,
+            name: 'Dashboard',
+            icon: LayoutDashboard,
+            path: '/dashboard',
+            auth: user
+        }
     ]
 
     return (
@@ -48,7 +49,9 @@ const MobileBottomMenu = () => {
                                      hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600
                                         ${path.includes(item.path) && 'text-primary'}`}>
                             {item.icon && <item.icon className={`group-hover:text-primary `} />}
-                            <span className="text-[10px] text-gray-500 dark:text-gray-400 group-hover:text-primary dark:group-hover:text-primary">{item.name}</span>
+                            <span className={`
+                            ${path.includes(item.path) && 'text-primary'}
+                            text-[10px] text-gray-500 dark:text-gray-400 group-hover:text-primary dark:group-hover:text-primary`}>{item.name}</span>
                         </button>
                     </Link>
                 ))}

@@ -10,8 +10,8 @@ const CourseVideoDescription = ({ courseInfo, activeChapterIndex, watchMode = fa
     <div>
       <h2 className='text-[20px] font-semibold'>{courseInfo?.name}</h2>
       <h2 className='text-[14px] text-gray-500 mb-3'>{courseInfo?.author}</h2>
-      {/* VideoPlayer */}
-      <VideoPlayer poster={!watchMode ? courseInfo?.banner?.url : null} videoUrl={courseInfo?.chapter[activeChapterIndex]?.video?.url} />
+      {/* {console.log("Check yt  : ", courseInfo)} */}
+      <VideoPlayer poster={!watchMode ? courseInfo?.banner?.url : null} videoUrl={courseInfo?.chapter[activeChapterIndex]?.video?.url} totalChapter={courseInfo.totalChapters} demoUrl ={courseInfo?.demoUrl} />
       {/* Descriiption */}
       <h2 className='mt-5 text-[17px] font-semibold'>
         {watchMode ?

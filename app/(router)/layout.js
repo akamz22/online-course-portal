@@ -20,9 +20,9 @@ const layout = ({ children }) => {
 
 
   const checkUserMembership = () => {
-    console.log("called checkUserMembership");
+    // console.log("called checkUserMembership");
     GlobalApi.checkForMembership(user.primaryEmailAddress.emailAddress).then((res) => {
-      console.log("User is a member : ", res);
+      // console.log("User is a member : ", res);
     })
   }
   return (

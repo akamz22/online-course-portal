@@ -9,8 +9,8 @@ const Newsletter = () => {
             <div class="relative max-w-md mx-auto">
               <h4 class="font-heading text-center text-4xl sm:text-5xl text-gray-500 font-semibold mb-12">Sign up for our newsletter</h4>
               <div class="sm:flex mb-2 items-center">
-                <input class="w-full mb-3 sm:mb-0 sm:mr-4 py-3 px-4 text-sm text-gray-900 placeholder-gray-400 border border-gray-200 focus:border-purple-500 focus:outline-purple rounded-lg" type="email" placeholder="pat@saturn.dev"/>
-                <button class="relative group inline-block flex-shrink-0 w-full sm:w-auto py-3 px-5 text-sm font-semibold text-orange-50 bg-blue-900 rounded-md overflow-hidden" type="submit">
+                <input class="w-full mb-3 sm:mb-0 sm:mr-4 py-3 px-4 text-sm text-gray-900 placeholder-gray-400 border border-gray-200 focus:border-purple-500 focus:outline-purple rounded-lg" type="email" placeholder="johndoe@gmail.com"/>
+                <button class="relative group inline-block flex-shrink-0 w-full sm:w-auto py-3 px-5 text-sm font-semibold text-orange-50 bg-primary rounded-md overflow-hidden" type="submit">
                   <div class="absolute top-0 right-full w-full h-full bg-gray-900 transform group-hover:translate-x-full group-hover:scale-102 transition duration-500"></div>
                   <div class="relative flex items-center justify-center">
                     <span class="mr-4">Subscribe</span>
