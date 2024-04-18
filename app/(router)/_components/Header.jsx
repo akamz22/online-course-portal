@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { Search, BellDot } from 'lucide-react'
+import NotificationPopup from './NotificationPopup'
 import { Button } from '@/components/ui/button'
 import { UserButton, useUser } from '@clerk/nextjs'
 import Link from 'next/link'
@@ -22,7 +23,7 @@ const Header = ({ handleSearch }) => {
       </div>
       <h1 className='font-bold md:hidden block text-primary text-[1.5em]'>Coursery</h1>
       <div className='flex gap-2 items-center'>
-        <BellDot className='text-gray-500' />
+        <NotificationPopup />
         {isLoaded && user ? (
           <UserButton afterSignOutUrl='/courses' />
         ) : (
