@@ -23,6 +23,7 @@ const CoursePreview = ({ params }) => {
       setCourseinfo(res?.courseList);
 
     });
+    
   }
   //To check user already enrolled-----------
 

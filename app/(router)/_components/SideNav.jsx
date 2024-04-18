@@ -40,7 +40,7 @@ const SideNav = () => {
         //     id: 4,
         //     name: 'Be Instructor',
         //     icon: GraduationCap,
-        //     path: '/instructor',
+        //     path: '/#',
         //     auth: true
         // },
         {

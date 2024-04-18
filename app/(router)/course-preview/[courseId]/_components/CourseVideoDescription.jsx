@@ -3,7 +3,7 @@ import Markdown from 'react-markdown'
 import { Button } from '@/components/ui/button';
 import VideoPlayer from './VideoPlayer';
 const CourseVideoDescription = ({ courseInfo, activeChapterIndex, watchMode = false, setChapterCompleted }) => {
-  // console.log("Course Info : ", courseInfo);
+  console.log("Course Info : ", courseInfo);
   // console.log(courseInfo);
   // console.log(activeChapterIndex)
   return (
@@ -11,12 +11,12 @@ const CourseVideoDescription = ({ courseInfo, activeChapterIndex, watchMode = fa
       <h2 className='text-[20px] font-semibold'>{courseInfo?.name}</h2>
       <h2 className='text-[14px] text-gray-500 mb-3'>{courseInfo?.author}</h2>
       {/* {console.log("Check yt  : ", courseInfo)} */}
-      <VideoPlayer poster={!watchMode ? courseInfo?.banner?.url : null} videoUrl={courseInfo?.chapter[activeChapterIndex]?.video?.url} totalChapter={courseInfo.totalChapters} demoUrl ={courseInfo?.demoUrl} />
+      <VideoPlayer poster={!watchMode ? courseInfo?.banner?.url : null} videoUrl={courseInfo?.chapter[activeChapterIndex]?.video?.url} totalChapter={courseInfo?.totalChapters} demoUrl ={courseInfo?.demoUrl} chapter={courseInfo?.chapter} />
       {/* Descriiption */}
       <h2 className='mt-5 text-[17px] font-semibold'>
         {watchMode ?
           <span className='flex justify-between items-center'>
-            {courseInfo?.chapter[activeChapterIndex].name}
+            {courseInfo?.chapter[activeChapterIndex]?.name}
             <Button onClick={() => setChapterCompleted(courseInfo?.chapter[activeChapterIndex]?.id)}>Mark Completed</Button>
           </span> :
           <span>

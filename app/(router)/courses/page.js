@@ -7,8 +7,15 @@ import WelcomeBanner from './_components/WelcomeBanner'
 import FilterData from './_components/FilterData'
 const Courses = () => {
   const [courseList, setCourseList] = useState([])
+  const [filteredCourseList, setFilteredCourseList] = useState([]);
+
+  // Update filteredCourseList when courseList changes
+  useEffect(() => {
+    setFilteredCourseList(courseList);
+  }, [courseList]);
   useEffect(() => {
     getAllCourses()
+    // console.log(courseList);
   }, [])
 
   const getAllCourses = () => {
@@ -17,15 +24,22 @@ const Courses = () => {
       setCourseList(data);
     })
   }
+  const handleSearch = (query) => {
+    const filtered = courseList.filter(course =>
+      course.name.toLowerCase().includes(query.toLowerCase())
+    );
+    setFilteredCourseList(filtered);
+  };
+
   return (
     <div className='grid p-5 grid-cols-1 md:grid-cols-4'>
       <div className='col-span-3'>
         {/* Banner */}
-        <FilterData courseList = {courseList} setCourseList = {setCourseList}/>
+        <FilterData handleSearch={handleSearch}/>
         <WelcomeBanner />
-        <CourseList courseList = {courseList} />
+        <CourseList courseList = {filteredCourseList} />
       </div>
-      <div className='mt-4 md:m-2 border rounded-xl'>
+      <div className='mt-4 md:m-0 border rounded-xl'>
         <SideBanners />
       </div>
     </div>

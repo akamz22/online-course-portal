@@ -12,7 +12,7 @@ const Dashboard = () => {
     GlobalApi.getUserAllEnrollCourseList(user?.primaryEmailAddress.emailAddress).then(res => {
       // console.log("Print enrolled courses : ", res);
       setUserEnrollCourses(res?.userEnrollCourses)
-      console.log("Data : ", userEnrollCourses);
+      // console.log("Data : ", userEnrollCourses);
     })
   }
   useEffect(() => {

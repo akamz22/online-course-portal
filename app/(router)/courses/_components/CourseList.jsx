@@ -23,7 +23,7 @@ const CourseList = ({courseList}) => {
     // }
 
     const applyFilter = (data) => {
-        console.log("Data  : " , data);
+        // console.log("Data  : " , data);
         if (filterOption === 'all') {
             setFilteredCourseList(data);
         } else {

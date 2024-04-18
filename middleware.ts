@@ -5,7 +5,7 @@ export default authMiddleware({
   publicRoutes: ['/sign-in' ,'/courses','/course-preview/(.*)'],
   // Routes that can always be accessed, and have
   // no authentication information
-  ignoredRoutes: ['/','/newsletter','/coursery-pro'],
+  ignoredRoutes: ['/','/newsletter','/coursery-pro','/store'],
 });
  
 export const config = {

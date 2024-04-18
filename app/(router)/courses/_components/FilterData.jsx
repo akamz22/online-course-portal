@@ -2,13 +2,15 @@
 import React, { useEffect, useState } from 'react'
 import { Search } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-const FilterData = ({ courseList, setCourseList }) => {
+const FilterData = ({ handleSearch }) => {
     const [search, setSearch] = useState('');
-    const handleSearch = (e) => {
-        setSearch(e.target.value);
+    const handleChange = (e) => {
+        const query = event.target.value;
+        setSearch(query);
+        handleSearch(query);
     }
     return (
-        <div className='flex justify-center md:hidden p-2 rounded-md mb-4 bg-white'>
+        <div className='flex justify-center p-2 rounded-md mb-4 bg-white'>
             <div className='flex md:gap-2 p-2 md:border md:rounded-md'>
                 <Search className='h-5 w-5' />
                 <input
@@ -16,7 +18,7 @@ const FilterData = ({ courseList, setCourseList }) => {
                     type="text"
                     placeholder='Search...'
                     value={search}
-                    onChange={handleSearch} // Attach search functionality to input change
+                    onChange={handleChange}
                 />
             </div>
         </div>

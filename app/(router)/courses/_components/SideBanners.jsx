@@ -14,12 +14,12 @@ const SideBanners = () => {
     getSideBanners();
   }, [])
   return (
-    <div className='space-y-2 rounded-md'>
+    <div className='rounded-md'>
       {sideBannerList.map((item, index) => (
-        <div key={index*79}>
+        <div key={index * 79} className='rounded-xl bg-white m-2 p-3'>
           <Image
             onClick={() => window.open(item?.url)}
-            className='rounded-lg p-4 bg-white cursor-pointer' alt="Banner" src={item.banner.url} height={800} width={400} />
+            className='rounded-xl cursor-pointer' alt="Banner" src={item.banner.url} height={800} width={400} />
         </div>
       ))}
     </div>

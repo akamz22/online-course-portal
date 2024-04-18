@@ -7,7 +7,7 @@ const MASTER_URL = `https://api-ap-south-1.hygraph.com/v2/${API_KEY}/master`
 const getAllCourseList = async () => {
   const query = gql`
     query Assets {
-        courseLists(orderBy: createdAt_DESC) {
+        courseLists(orderBy: createdAt_ASC) {
           author
           id
           name
