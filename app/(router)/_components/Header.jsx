@@ -15,7 +15,7 @@ const Header = ({ handleSearch }) => {
   }
   return (
     <div className='md:p-4 sticky top-0 p-2 w-full bg-white flex justify-between items-center'>
-      <div className='flex text-primary md:gap-2 p-2 md:border md:rounded-md cursor-pointer hover:bg-primary hover:text-white'>
+      <div className='md:flex text-primary hidden md:gap-2 p-2 md:border md:rounded-md cursor-pointer hover:bg-primary hover:text-white'>
         <p className=''>My Favourites❤️</p>
         {/* <Search className='h-5 w-5 hidden md:block' /> */}
         {/* <input className='outline-none hidden md:block w-28 md:w-full pl-2' value={search} onChange={handleChange} type="text" placeholder='Search...' /> */}
